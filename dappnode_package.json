@@ -1,0 +1,39 @@
+{
+  "name": "lodestar.dnp.dappnode.eth",
+  "version": "1.0.0",
+  "upstreamVersion": "v1.0.0",
+  "architectures": ["linux/amd64", "linux/arm64"],
+  "upstreamRepo": "ChainSafe/lodestar",
+  "shortDescription": "Typescript Ethereum Consensus Layer Implementation by ChainsSafe",
+  "description": "Typescript Ethereum Consensus Layer Implementation by ChainsSafe",
+  "type": "service",
+  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
+  "contributors": [
+    "tropicar <tropicar@dappnode.io> (https://github.com/tropicar)",
+    "nabsku <thenabsku@gmail.com> (https://github.com/nabsku)",
+    "Voss <alex@visnovaventures.com> (https://github.com/alexpeterson91)"
+  ],
+  "categories": ["Blockchain", "ETH2.0"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dappnode/DAppNodePackage-Lodestar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dappnode/DAppNodePackage-Lodestar/Issues"
+  },
+  "links": {
+    "ui": "http://ui.web3signer.dappnode?signer_url=http://web3signer.web3signer.dappnode:9000",
+    "homepage": "https://github.com/dappnode/DAppNodePackage-lodestar#readme",
+    "readme": "https://github.com/ChainSafe/lodestar#lodestar-ethereum-consensus-implementation",
+    "docs": "https://chainsafe.github.io/lodestar/"
+  },
+  "license": "LGPL-3.0",
+  "chain": {
+    "driver": "ethereum-beacon-chain",
+    "serviceName": "beacon-chain",
+    "portNumber": 3500
+  },
+  "warnings": {
+    "onRemove": "Make sure your web3signer does not have this client selected! (Packages > web3signer > config > client)"
+  }
+}

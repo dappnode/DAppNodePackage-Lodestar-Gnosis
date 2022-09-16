@@ -1,0 +1,92 @@
+version: "2"
+fields:
+  - id: config_mode
+    title: Execution Client Config Mode
+    description: >-
+      Advanced and Development Use Only: Please only enable this option if you are confident you know what you are doing, if you have any doubts, please use the basic setting.
+      
+      Set this to **"advanced"** to pass in an arbitrary Execution Client Engine-API or leave on **basic** to choose one below.
+    target:
+      type: environment
+      name: CONFIG_MODE
+      service: beacon-chain
+    enum:
+      - "basic"
+      - "advanced"
+  - id: HTTP_ENGINE
+    required: true
+    target:
+      type: environment
+      name: HTTP_ENGINE
+      service: beacon-chain
+    title: Execution Client Endpoint
+    description: >-
+      The Consensus Clients (Lighthouse, Lodestar, Nimbus, Prysm, and Teku) require access to an Execution Client to receive the execution payload by using the Engine API of the Execution Client.   
+
+      This endpoint MUST be provided for an Execution Client that is run locally.   
+
+      IT IS NO LONGER POSSIBLE TO USE INFURA OR ANY OTHER SERVICE PROVIDER AS YOUR EXECUTION CLIENT.
+
+      - Geth [Install link](http://my.dappnode/#/installer/geth.dnp.dappnode.eth)
+
+      - Nethermind [Install link](http://my.dappnode/#/installer/nethermind.public.dappnode.eth)
+
+      - Erigon [Install link](http://my.dappnode/#/installer/erigon.dnp.dappnode.eth)
+
+
+      Consensus Clients require access to an Execution Client in order to operate properly.
+      Be sure to only select an Execution Client below that you have already installed.
+    enum:
+      - "http://geth.dappnode:8551"
+      - "http://nethermind.public.dappnode:8551"
+      - "http://erigon.dappnode:8551"
+    if: { "config_mode": { "enum": ["basic"] } }    
+  - id: HTTP_ENGINE
+    required: true
+    target:
+      type: environment
+      name: HTTP_ENGINE
+      service: beacon-chain
+    title: Execution Client Endpoint
+    description: >-
+      The Consensus Clients (Lighthouse, Nimbus, Prysm, and Teku) require access to an Execution Client to receive the execution payload by using the Engine API of the Execution Client.   
+
+      This endpoint MUST be provided for an Execution Client that is run locally.   
+
+      IT IS NO LONGER POSSIBLE TO USE INFURA OR ANY OTHER SERVICE PROVIDER AS YOUR EXECUTION CLIENT.   
+
+      Consensus Clients require access to an Execution Client in order to operate properly.   
+
+      You can usually find the Engine API in the Execution Clients Package Info.
+    if: { "config_mode": { "enum": ["advanced"] } }
+  - id: GRAFFITI
+    target:
+      type: environment
+      name: GRAFFITI
+      service: validator
+    title: Graffiti
+    maxLength: 32
+    description: >-
+      Add a string to your proposed blocks, which will be seen on the block explorer
+  - id: checkpointSyncUrl
+    target:
+      type: environment
+      name: CHECKPOINT_SYNC_URL
+      service: beacon-chain
+    title: Checkpoint for fast sync
+    description: >-
+      To get Lodestar up and running in only a few minutes, you can start Lodestar from a recent finalized checkpoint state rather than syncing from genesis. This is substantially **faster** and consumes **less resources** than syncing from genesis, while still providing all the same features. Be sure you are using a trusted node for the fast sync.
+      Use the dappnode official endpoint `https://checkpoint-sync.dappnode.io` or get your checkpoint sync from [Infura](https://infura.io/) (i.e https://XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX@eth2-beacon-chain.infura.io)
+      *Note - If you are going to provide your own checkpoint sync endpoint, make sure you do not use a slash `/` at the end of the URL.*
+    required: false
+  - id: feeRecipientAddress
+    target:
+      type: environment
+      name: FEE_RECIPIENT_ADDRESS
+      service: validator
+    title: Fee Recipient Address
+    description: >-
+      Fee Recipient is a feature that lets you specify a priority fee recipient address on your validator client instance and beacon node. Make sure this is an address you control. After The Merge, Execution Clients will begin depositing priority fees into this address whenever your validator proposes a new block.
+    required: true
+    pattern: "^0x[a-fA-F0-9]{40}$"
+    patternErrorMessage: Must be a valid address (0x1fd16a...)

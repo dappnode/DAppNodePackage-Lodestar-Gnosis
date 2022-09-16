@@ -1,0 +1,43 @@
+version: "3.5"
+services:
+  beacon-chain:
+    image: "beacon-chain.lodestar.dnp.dappnode.eth:1.0.0"
+    build:
+      context: beacon-chain
+      args:
+        UPSTREAM_VERSION: v1.0.0
+    volumes:
+      - "beacon-data:/var/lib/data"
+    ports:
+      - "9112:9112/tcp"
+      - "9112:9112/udp"
+    restart: unless-stopped
+    security_opt:
+      - "seccomp:unconfined"
+    environment:
+      DEBUG_LEVEL: info
+      BEACON_API_PORT: 3500
+      HTTP_ENGINE: ""
+      CORSDOMAIN: "http://lodestar.dappnode"
+      CHECKPOINT_SYNC_URL: ""
+      P2P_PORT: 9112
+      EXTRA_OPTS: ""
+      CONFIG_MODE: basic
+  validator:
+    image: "validator.lodestar.dnp.dappnode.eth:1.0.0"
+    build:
+      context: validator
+      args:
+        UPSTREAM_VERSION: v1.0.0
+    restart: unless-stopped
+    security_opt:
+      - "seccomp:unconfined"
+    environment:
+      DEBUG_LEVEL: info
+      HTTP_WEB3SIGNER: "http://web3signer.web3signer.dappnode:9000"
+      BEACON_NODE_ADDR: "http://beacon-chain.lodestar.dappnode:3500"
+      GRAFFITI: validating_from_DAppNode
+      EXTRA_OPTS: ""
+      FEE_RECIPIENT_ADDRESS: ""
+volumes:
+  beacon-data: {}
