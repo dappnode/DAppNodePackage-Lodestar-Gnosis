@@ -1,11 +1,11 @@
 version: "3.5"
 services:
   beacon-chain:
-    image: "beacon-chain.lodestar.dnp.dappnode.eth:1.0.0"
+    image: "beacon-chain.lodestar.dnp.dappnode.eth:0.1.0"
     build:
       context: beacon-chain
       args:
-        UPSTREAM_VERSION: v1.4.3
+        UPSTREAM_VERSION: v1.5.0
     volumes:
       - "beacon-data:/var/lib/data"
     ports:
@@ -24,11 +24,11 @@ services:
       EXTRA_OPTS: ""
       CONFIG_MODE: basic
   validator:
-    image: "validator.lodestar.dnp.dappnode.eth:1.0.0"
+    image: "validator.lodestar.dnp.dappnode.eth:0.1.0"
     build:
       context: validator
       args:
-        UPSTREAM_VERSION: v1.4.3
+        UPSTREAM_VERSION: v1.5.0
     restart: unless-stopped
     security_opt:
       - "seccomp:unconfined"
