@@ -5,7 +5,7 @@ services:
     build:
       context: beacon-chain
       args:
-        UPSTREAM_VERSION: v1.5.0
+        UPSTREAM_VERSION: v1.5.1
     volumes:
       - "beacon-data:/var/lib/data"
     ports:
@@ -17,18 +17,18 @@ services:
     environment:
       DEBUG_LEVEL: info
       BEACON_API_PORT: 3500
-      HTTP_ENGINE: ""
-      CORSDOMAIN: "http://lodestar-gnosis.dappnode"
       CHECKPOINT_SYNC_URL: ""
       P2P_PORT: 19012
       EXTRA_OPTS: ""
-      CONFIG_MODE: basic
+      FEE_RECIPIENT_ADDRESS: ""
   validator:
     image: "validator.lodestar-gnosis.dnp.dappnode.eth:0.1.0"
     build:
       context: validator
       args:
-        UPSTREAM_VERSION: v1.5.0
+        UPSTREAM_VERSION: v1.5.1
+    volumes:
+      - "validator-data:/var/lib/data"
     restart: unless-stopped
     security_opt:
       - "seccomp:unconfined"
@@ -41,3 +41,4 @@ services:
       FEE_RECIPIENT_ADDRESS: ""
 volumes:
   beacon-data: {}
+  validator-data: {}

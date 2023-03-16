@@ -1,1 +1,7 @@
-# DAppNodePackage Lodestar
+# DAppNodePackage Lodestar Gnosis
+
+## Lodestar Gnosis Chain Consensus Layer Client
+
+Typescript Gnosis Chain Consensus Layer Implementation by ChainSafe.
+
+![avatar](avatar.png)

@@ -1,11 +1,11 @@
 {
   "name": "lodestar-gnosis.dnp.dappnode.eth",
   "version": "0.1.0",
-  "upstreamVersion": "v1.5.0",
+  "upstreamVersion": "v1.5.1",
   "architectures": ["linux/amd64", "linux/arm64"],
   "upstreamRepo": "ChainSafe/lodestar",
-  "shortDescription": "Typescript Ethereum Consensus Layer Implementation by ChainsSafe",
-  "description": "Typescript Ethereum Consensus Layer Implementation by ChainsSafe",
+  "shortDescription": "Lodestar Gnosis is a Typescript implementation of the Gnosis Beacon Chain",
+  "description": "Lodestar Gnosis is an open-source Gnosis Chain Consensus Client on Gnosis Chain written in Typescript; maintained by ChainSafe Systems",
   "type": "service",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
@@ -13,7 +13,7 @@
     "nabsku <thenabsku@gmail.com> (https://github.com/nabsku)",
     "Voss <voss@visnovalabs.io> (https://github.com/alexpeterson91)"
   ],
-  "categories": ["Blockchain", "ETH2.0"],
+  "categories": ["Blockchain"],
   "repository": {
     "type": "git",
     "url": "https://github.com/dappnode/DAppNodePackage-Lodestar-Gnosis.git"
@@ -22,12 +22,15 @@
     "url": "https://github.com/dappnode/DAppNodePackage-Lodestar-Gnosis/Issues"
   },
   "links": {
-    "ui": "http://brain.web3signer.dappnode",
-    "homepage": "https://github.com/dappnode/DAppNodePackage-lodestar#readme",
-    "readme": "https://github.com/ChainSafe/lodestar#lodestar-ethereum-consensus-implementation",
-    "docs": "https://chainsafe.github.io/lodestar/"
+    "ui": "http://brain.web3signer-gnosis.dappnode/",
+    "homepage": "https://lodestar.chainsafe.io/",
+    "docs": "https://chainsafe.github.io/lodestar/",
+    "readme": "https://github.com/ChainSafe/lodestar/blob/stable/README.md"
   },
   "license": "LGPL-3.0",
+  "requirements": {
+    "minimumDappnodeVersion": "0.2.68"
+  },
   "chain": {
     "driver": "ethereum-beacon-chain",
     "serviceName": "beacon-chain",
@@ -35,5 +38,11 @@
   },
   "warnings": {
     "onRemove": "Make sure your Gnosis StakersUI does not have Lodestar Gnosis selected or you will stop validating! (Stakers > Gnosis)"
-  }
+  },
+  "globalEnvs": [
+    {
+      "envs": ["EXECUTION_CLIENT_PRATER"],
+      "services": ["beacon-chain"]
+    }
+  ]
 }
