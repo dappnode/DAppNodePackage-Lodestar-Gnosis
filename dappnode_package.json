@@ -41,7 +41,7 @@
   },
   "globalEnvs": [
     {
-      "envs": ["EXECUTION_CLIENT_PRATER"],
+      "envs": ["EXECUTION_CLIENT_GNOSIS"],
       "services": ["beacon-chain"]
     }
   ]
