@@ -1,0 +1,16 @@
+[
+    {
+      "labels": {
+        "package": "lodestar-gnosis.dnp.dappnode.eth",
+        "service": "beacon-chain.lodestar-gnosis.dappnode"
+      },
+      "targets": ["beacon-chain.lodestar-gnosis.dappnode:8008"]
+    },
+    {
+      "labels": {
+        "package": "lodestar-gnosis.dnp.dappnode.eth",
+        "service": "validator.lodestar-gnosis.dappnode"
+      },
+      "targets": ["validator.lodestar-gnosis.dappnode:5064"]
+    }
+  ]
