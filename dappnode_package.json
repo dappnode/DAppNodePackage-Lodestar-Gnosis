@@ -19,7 +19,7 @@
     "url": "https://github.com/dappnode/DAppNodePackage-Lodestar-Gnosis.git"
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-Lodestar-Gnosis/Issues"
+    "url": "https://github.com/dappnode/DAppNodePackage-Lodestar-Gnosis/issues"
   },
   "links": {
     "ui": "http://brain.web3signer-gnosis.dappnode/",
@@ -41,7 +41,7 @@
   },
   "globalEnvs": [
     {
-      "envs": ["EXECUTION_CLIENT_PRATER"],
+      "envs": ["EXECUTION_CLIENT_GNOSIS"],
       "services": ["beacon-chain"]
     }
   ]
