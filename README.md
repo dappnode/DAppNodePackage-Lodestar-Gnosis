@@ -4,4 +4,4 @@
 
 Typescript Gnosis Chain Consensus Layer Implementation by ChainSafe.
 
-![avatar](avatar.png)
+![avatar](lodestar-avatar.png)
