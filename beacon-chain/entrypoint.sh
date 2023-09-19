@@ -19,7 +19,7 @@ esac
 
 
 
-exec node /usr/app/node_modules/.bin/lodestar \
+exec node --max-old-space-size=${MEMORY_LIMIT} /usr/app/node_modules/.bin/lodestar \
     beacon \
     --network=gnosis \
     --suggestedFeeRecipient=${FEE_RECIPIENT_ADDRESS} \
