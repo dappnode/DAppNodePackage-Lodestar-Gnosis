@@ -551,7 +551,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "rate(process_cpu_user_seconds_total{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [1m])",
+          "expr": "rate(process_cpu_user_seconds_total{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [1m])",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -600,7 +600,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "process_heap_bytes{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}",
+          "expr": "process_heap_bytes{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}",
           "interval": "",
           "legendFormat": "",
           "refId": "A"
@@ -649,7 +649,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "process_start_time_seconds{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}*1000",
+          "expr": "process_start_time_seconds{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}*1000",
           "instant": false,
           "interval": "",
           "legendFormat": "",
@@ -767,7 +767,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "lodestar_version{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}",
+          "expr": "lodestar_version{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -821,7 +821,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "lodestar_version{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}",
+          "expr": "lodestar_version{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}",
           "format": "time_series",
           "instant": true,
           "interval": "",
@@ -875,7 +875,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "nodejs_version_info{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}",
+          "expr": "nodejs_version_info{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{version}}",
@@ -1438,7 +1438,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "sum(rate(nodejs_gc_duration_seconds_sum{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [$rate_interval])) by (instance)",
+          "expr": "sum(rate(nodejs_gc_duration_seconds_sum{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [$rate_interval])) by (instance)",
           "hide": false,
           "interval": "",
           "legendFormat": "gc_duration_sum",
@@ -1450,7 +1450,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "sum(rate(nodejs_gc_pause_seconds_total{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [$rate_interval])) by (instance)",
+          "expr": "sum(rate(nodejs_gc_pause_seconds_total{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [$rate_interval])) by (instance)",
           "hide": false,
           "interval": "",
           "legendFormat": "gc_pause_sum",
@@ -1728,7 +1728,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "avg_over_time( scrape_duration_seconds{service=\"beacon-chain.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [$rate_interval])",
+          "expr": "avg_over_time( scrape_duration_seconds{service=\"beacon-chain.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [$rate_interval])",
           "hide": false,
           "interval": "",
           "legendFormat": "prometheus_beacon_scrape_roundtrip",
@@ -1740,7 +1740,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": false,
-          "expr": "avg_over_time( scrape_duration_seconds{service=\"validator.lodestar.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [$rate_interval])",
+          "expr": "avg_over_time( scrape_duration_seconds{service=\"validator.lodestar-gnosis.dappnode\", package=\"lodestar.dnp.dappnode.eth\"} [$rate_interval])",
           "hide": false,
           "interval": "",
           "legendFormat": "prometheus_validator_scrape_roundtrip",
