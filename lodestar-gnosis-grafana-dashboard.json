@@ -2936,7 +2936,7 @@
   },
   "timezone": "utc",
   "title": "Lodestar Gnosis",
-  "uid": "lodestar_summary",
+  "uid": "lodestar_summary_gnosis",
   "version": 29,
   "weekStart": "monday"
 }
