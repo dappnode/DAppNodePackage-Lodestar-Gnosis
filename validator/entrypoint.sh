@@ -22,6 +22,7 @@ exec node /usr/app/node_modules/.bin/lodestar \
     --externalSigner.url=${HTTP_WEB3SIGNER} \
     --doppelgangerProtection=${DOPPELGANGER_PROTECTION} \
     --beaconNodes=${BEACON_NODE_ADDR} \
+    --http.requestWireFormat=ssz \
     --logLevel=${DEBUG_LEVEL} \
     --logFileLevel=debug \
     --logFileDailyRotate 5 \
