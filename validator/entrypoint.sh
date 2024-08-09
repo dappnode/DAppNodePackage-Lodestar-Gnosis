@@ -3,7 +3,7 @@
 # Handle Graffiti Character Limit
 oLang=$LANG oLcAll=$LC_ALL
 LANG=C LC_ALL=C 
-graffitiString=${GRAFFITI:0:32}
+graffitiString=$(echo "$GRAFFITI" | cut -c 1-32)
 LANG=$oLang LC_ALL=$oLcAll
 
 exec node /usr/app/node_modules/.bin/lodestar \
