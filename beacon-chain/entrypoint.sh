@@ -18,7 +18,6 @@ case $_DAPPNODE_GLOBAL_EXECUTION_CLIENT_GNOSIS in
 esac
 
 
-
 exec node --max-old-space-size=${MEMORY_LIMIT} /usr/app/node_modules/.bin/lodestar \
     beacon \
     --network=gnosis \
