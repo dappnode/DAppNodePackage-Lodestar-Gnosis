@@ -23,6 +23,7 @@ exec node /usr/app/node_modules/.bin/lodestar \
     --doppelgangerProtection="${DOPPELGANGER_PROTECTION}" \
     --beaconNodes="${BEACON_NODE_ADDR}" \
     --http.requestWireFormat=ssz \
+    --blindedLocal true \
     --logLevel="${DEBUG_LEVEL}" \
     --logFileLevel=debug \
     --logFileDailyRotate 5 \
