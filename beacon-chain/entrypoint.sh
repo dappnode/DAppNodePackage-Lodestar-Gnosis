@@ -24,6 +24,7 @@ exec node --max-old-space-size=${MEMORY_LIMIT} /usr/app/node_modules/.bin/lodest
     --jwt-secret=/jwtsecret \
     --execution.urls=${HTTP_ENGINE} \
     --dataDir=/var/lib/data \
+    --serveHistoricalState \
     --rest \
     --rest.address 0.0.0.0 \
     --rest.port ${BEACON_API_PORT} \
